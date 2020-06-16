@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views import View
+from django.http import HttpResponse, JsonResponse
 
-# Create your views here.
+
+class UserAuthView(View):
+    def get(self, request):
+        return JsonResponse({"message": "for_test haha"}, status=200)
+
