@@ -2,10 +2,11 @@ from django.db import models
 
 
 class User(models.Model):
-    name = models.CharField(max_length=30)
-    phone = models.CharField(max_length=20)
-    age = models.IntegerField()
-    gender = models.CharField(max_length=5)
+    name = models.CharField(max_length=30, null=True)
+    user = models.CharField(max_length=20)
+    password = models.CharField(max_length=200)
+    age = models.IntegerField(null=True)
+    gender = models.CharField(max_length=5, null=True)
     routine = models.ManyToManyField("exercise.Routine", through="UserRoutine")
 
     class Meta:
